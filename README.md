@@ -1,0 +1,1 @@
+# hide_url_extension
