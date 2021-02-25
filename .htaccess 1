@@ -1,0 +1,13 @@
+<IfModule mod_rewrite.c>
+# BEGIN Force http to https
+RewriteEngine On
+RewriteCond %{HTTPS} !=on
+RewriteRule ^(.*) https://%{HTTP_HOST}/$1 [R=301,L]
+# END Force http to https
+</IfModule>
+
+RewriteEngine on
+RewriteBase /
+RewriteRule ^(.+)\.php$ /$1 [R,L]
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^(.*?)/?$ /$1.php [NC,END]
